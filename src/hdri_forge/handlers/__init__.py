@@ -1,0 +1,1 @@
+"""Thin request/response handlers. No business logic lives here."""
