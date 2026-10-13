@@ -1,0 +1,57 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+wheels/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Tooling caches
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Model + render artifacts (never commit these)
+models/checkpoints/*.ckpt
+models/checkpoints/*.safetensors
+models/loras/*.safetensors
+out/
+renders/
+*.exr
+*.hdr
+*.ktx2
+*.dds
+*.png
+*.jpg
+!docs/examples/*.png
+
+# Local config / secrets
+config/local.toml
+config/*.local.toml
+.env
+.env.*
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# CUDA / TensorRT scratch
+*.engine
+*.plan
