@@ -1,0 +1,36 @@
+# hdri-skybox-forge — default runtime config
+# Override with config/local.toml (gitignored) or --config <path>.
+
+[app]
+log_level = "info"
+log_dir = "logs"
+device = "auto"          # auto | cuda | directml | cpu
+precision = "fp16"       # fp16 | bf16 | fp32
+tile_size = 1024         # latent tiling for >4K equirect renders
+
+[models]
+diffusion = "models/checkpoints/skyforge-xl-v2.safetensors"
+vae = "models/checkpoints/skyforge-vae-fp16.safetensors"
+controlnet_sun = "models/loras/sun-vector-control.safetensors"
+default_lora_weight = 0.65
+
+[render]
+default_resolution = 4096        # equirect width; height = width / 2
+faces = 6                        # cubemap faces
+projection = "equirect"          # equirect | cubemap | fisheye | latlong
+sun_azimuth_deg = 135.0
+sun_elevation_deg = 42.0
+atmosphere_turbidity = 2.4
+exposure_ev = 0.0
+
+[output]
+format = "exr"           # exr | hdr | png16 | ktx2 | dds
+half_float = true
+write_sidecar_json = true
+out_dir = "out"
+
+[perf]
+vram_budget_gb = 12
+attention_slicing = true
+vae_tiling = true
+torch_compile = false
