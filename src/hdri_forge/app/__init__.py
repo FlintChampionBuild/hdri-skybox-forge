@@ -1,0 +1,1 @@
+"""Application entrypoints: CLI, tray, and bootstrap wiring."""
